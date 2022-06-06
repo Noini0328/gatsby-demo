@@ -3,6 +3,10 @@ module.exports = {
     title: `Demo`,
     siteUrl: `https://www.yourdomain.tld`
   },
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+  ],
   plugins: [{
     resolve: 'gatsby-plugin-google-analytics',
     options: {

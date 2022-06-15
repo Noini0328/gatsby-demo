@@ -26,7 +26,10 @@ const Layout = ({ pageTitle, children }) => {
   return (
     <div className={container}>
 
-      <Helmet title={WebTitle} />
+      <Helmet>
+        <html lang="ja" />
+        <title>{WebTitle}</title>
+      </Helmet>
 
       <title>{WebTitle}</title>
       <nav>

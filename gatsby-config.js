@@ -38,7 +38,12 @@ module.exports = {
       "path": "./blog/"
     },
     __key: "blog"
+  }, {
+    resolve: 'gatsby-plugin-mdx',
+    options: {
+      "name": "blog",
+      "path": "./blog/"
+    },
   },
-  "gatsby-plugin-mdx",
 ]
 };

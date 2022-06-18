@@ -39,6 +39,5 @@ module.exports = {
     },
     __key: "blog"
   },
-  "gatsby-plugin-mdx",
 ]
 };

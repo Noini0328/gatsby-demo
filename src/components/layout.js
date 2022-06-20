@@ -1,14 +1,21 @@
 import * as React from 'react'
 import { Helmet } from 'react-helmet';
-import { Link, useStaticQuery, graphql } from 'gatsby'
+//import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import {
   container,
   heading,
-  navLinks,
-  navLinkItem,
-  navLinkText,
+//  navLinks,
+//  navLinkItem,
+//  navLinkText,
   siteTitle
 } from './layout.module.css'
+
+
+
+import Header from "../components/header.js"
+import Footer from "../components/footer.js"
+
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -32,30 +39,13 @@ const Layout = ({ pageTitle, children }) => {
         <title>{pageTitle} | {SiteMetadataTitle}</title>
       </Helmet>
       <header className={siteTitle}>{SiteMetadataTitle}</header>
+      <Header/>
       <title>{WebTitle}</title>
-      <nav>
-        <ul className={navLinks}>
-          <li className={navLinkItem}>
-            <Link to="/" className={navLinkText}>
-              Home
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to="/about" className={navLinkText}>
-              About
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to="/blog" className={navLinkText}>
-              Blog
-            </Link>
-          </li>
-        </ul>
-      </nav>
       <main>
         <h1 className={heading}>{pageTitle}</h1>
         {children}
       </main>
+      <Footer/>
     </div>
   )
 }

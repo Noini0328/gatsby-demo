@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+
+
 const Header = () => {
     return (
         <header>
@@ -8,6 +10,7 @@ const Header = () => {
                 <ul>
                     <li><Link to="/">top</Link></li>
                     <li><Link to="/about">about</Link></li>
+                    <li><Link to="/blog">blog</Link></li>
                 </ul>
             </nav>
         </header>

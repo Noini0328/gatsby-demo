@@ -4,8 +4,8 @@ import { Container, Navbar, Nav } from 'react-bootstrap'
 
 
 const Header = () => {
-    return (
-        <header className="bg-dark">
+    return (  
+      <header className="bg-dark">
         <Container>
           <Navbar expand="md" variant="dark">
             <Navbar.Toggle aria-controls="navbarResponsive" />

@@ -1,21 +1,11 @@
 import * as React from 'react'
 import { Helmet } from 'react-helmet';
-//import { Link, useStaticQuery, graphql } from 'gatsby'
 import { useStaticQuery, graphql } from 'gatsby'
-import {
-  container,
-  heading,
-//  navLinks,
-//  navLinkItem,
-//  navLinkText,
-  siteTitle
-} from './layout.module.css'
+import {heading, siteTitle} from './layout.module.css'
 
- /* yarnでinstallしたものをインポート */
+import Navigation  from './navigation_bar_graphql';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from "../components/header.js"
-import Footer from "../components/footer.js"
-
+import Container from 'react-bootstrap/Container'
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -32,21 +22,20 @@ const Layout = ({ pageTitle, children }) => {
   const SiteMetadataTitle = data.site.siteMetadata.title
 
   return (
-    <div className={container}>
-
+    <Container>
       <Helmet>
         <html lang="ja" />
         <title>{pageTitle} | {SiteMetadataTitle}</title>
       </Helmet>
+      <Navigation />
       <header className={siteTitle}>{SiteMetadataTitle}</header>
-      <Header/>
       <title>{WebTitle}</title>
       <main>
         <h1 className={heading}>{pageTitle}</h1>
         {children}
       </main>
-      <Footer/>
-    </div>
+
+    </Container>
   )
 }
 
